@@ -166,7 +166,7 @@
 					if (t.title || t.title !== null) {
 						$(n).prepend("<h3>" + t.title + "</h3>");
 					} else {
-						$(n).remoe();
+						$(n).remove();
 					}
 					if (t.type == "prompt") {
 						t.text = (t.text !== null ? t.text : "") + '<input type="text" name="modal-prompt-input" class="modal-prompt-input" autocomplete="off" autofocus="on" />';
