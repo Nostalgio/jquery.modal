@@ -10,7 +10,7 @@
  * Version: 1.2.3 (10-04-2015)
  * Requires: jQuery v1.7.1 or later
  */
-(function(e) {
+(function($) {
 	"use strict";
 	$.fn.modal = function(supplied_parameters) {
 		var defaults = {
@@ -51,29 +51,29 @@
 				}
 			},
 			t = $.extend({}, defaults, supplied_parameters),
-			r, i = e("<div id='modal-window' />").hide(),
+			r, i = $("<div id='modal-window' />").hide(),
 			s = t._classes.box,
 			o = i.append(t.template),
 			u = {
 				init: function() {
-					e("#modal-window").remove();
+					$("#modal-window").remove();
 					u._setStyle();
 					u._modalShow();
 					u._modalConent();
 					i.on("click", "a.modal-btn", function(t) {
-						u._modalBtn(e(this));
+						u._modalBtn($(this));
 					}).on("click", t._classes.closebtn, function(e) {
                         r = false;
 						u._modalHide();
 					}).click(function(e) {
 						if (t.closeClick) {
-							if ($.target.id == "modal-window") {
+							if (e.target.id == "modal-window") {
                                 r = false;
 								u._modalHide();
 							}
 						}
 					});
-					e(window).bind("keyup", u._keyUpF).resize(function() {
+					$(window).bind("keyup", u._keyUpF).resize(function() {
 						var e = t.animate;
 						t.animate = false;
 						u._position();
@@ -108,9 +108,9 @@
 					}
 				},
 				_modalShow: function() {
-					e("body").css({
+				$("body").css({
 						overflow: "hidden",
-						width: e("body").innerWidth()
+						width: $("body").innerWidth()
 					}).append(o);
 				},
 				_modalHide: function(n) {
@@ -121,14 +121,14 @@
 					var o = function() {
 						if (t.callback !== null && typeof(t.callback) == "function" ? t.callback(r, i, u.actions) === false ? false : true : true) {
 							i.fadeOut(200, function() {
-								e(this).remove();
-								e("body").css({
+								$(this).remove();
+								$("body").css({
 									overflow: "",
 									width: ""
 								});
 							});
-							var n = 100 * parseFloat(e(s).css("top")) / parseFloat(e(s).parent().css("height"));
-							e(s).stop(true, true).animate({
+							var n = 100 * parseFloat($(s).css("top")) / parseFloat($(s).parent().css("height"));
+							$(s).stop(true, true).animate({
 								top: n + (t.animate ? 3 : 0) + "%"
 							}, "fast");
 						}
@@ -140,7 +140,7 @@
 							o();
 						}, n);
 					}
-					e(window).unbind("keyup", u._keyUpF);
+					$(window).unbind("keyup", u._keyUpF);
 				},
 				_modalConent: function() {
 					var n = t._classes.title,
@@ -150,28 +150,28 @@
 						f = ["alert", "confirm", "prompt"],
 						l = ["xenon", "atlant", "reseted"];
 					if ($.inArray(t.type, f) == -1 && t.type != "default") {
-						e(s).addClass("modal-type-" + t.type);
+						$(s).addClass("modal-type-" + t.type);
 					}
 					if (t.size && t.size !== null) {
-						e(s).addClass("modal-size-" + t.size);
+						$(s).addClass("modal-size-" + t.size);
 					} else {
-						e(s).addClass("modal-size-normal");
+						$(s).addClass("modal-size-normal");
 					}
 					if (t.theme && t.theme !== null && t.theme != "default") {
-						e(s).addClass(($.inArray(t.theme, l) == -1 ? "" : "modal-theme-") + t.theme);
+						$(s).addClass(($.inArray(t.theme, l) == -1 ? "" : "modal-theme-") + t.theme);
 					}
 					if (t.background && t.background !== null) {
 						i.css("background-color", t.background);
 					}
 					if (t.title || t.title !== null) {
-						e(n).prepend("<h3>" + t.title + "</h3>");
+						$(n).prepend("<h3>" + t.title + "</h3>");
 					} else {
-						e(n).remove();
+						$(n).remoe();
 					}
 					if (t.type == "prompt") {
 						t.text = (t.text !== null ? t.text : "") + '<input type="text" name="modal-prompt-input" class="modal-prompt-input" autocomplete="off" autofocus="on" />';
 					}
-					e(r).html(t.text);
+					$(r).html(t.text);
 					if (t.buttons || t.buttons !== null) {
 						var c = "";
 						switch (t.type) {
@@ -197,15 +197,15 @@
 									c += '<a class="modal-btn">' + a.ok + "</a>";
 								}
 						}
-						e(o).html(c);
+						$(o).html(c);
 					} else {
-						e(o).remove();
+						$(o).remove();
 					}
 					if (t.type == "prompt") {
 						$(".modal-prompt-input").focus();
 					}
 					if (t.autoclose) {
-						var h = t.buttons || t.buttons !== null ? e(r).text().length * 32 : 900;
+						var h = t.buttons || t.buttons !== null ? $(r).text().length * 32 : 900;
 						u._modalHide(h < 900 ? 900 : h);
 					}
 					i.fadeIn(200, function(){
@@ -219,10 +219,10 @@
 					var n, r, i;
 					if (t.center) {
 						n = {
-							top: e(window).height() < e(s).outerHeight() ? 1 : 50,
+							top: $(window).height() < $(s).outerHeight() ? 1 : 50,
 							left: 50,
-							marginTop: e(window).height() < e(s).outerHeight() ? 0 : -e(s).outerHeight() / 2,
-							marginLeft: -e(s).outerWidth() / 2
+							marginTop: $(window).height() < $(s).outerHeight() ? 0 : -$(s).outerHeight() / 2,
+							marginLeft: -$(s).outerWidth() / 2
 						};
 						r = {
 							top: n.top - (t.animate ? 3 : 0) + "%",
@@ -235,10 +235,10 @@
 						};
 					} else {
 						n = {
-							top: e(window).height() < e(s).outerHeight() ? 1 : 10,
+							top: $(window).height() < $(s).outerHeight() ? 1 : 10,
 							left: 50,
 							marginTop: 0,
-							marginLeft: -e(s).outerWidth() / 2
+							marginLeft: -$(s).outerWidth() / 2
 						};
 						r = {
 							top: n.top - (t.animate ? 3 : 0) + "%",
@@ -250,7 +250,7 @@
 							top: n.top + "%"
 						};
 					}
-					e(s).css(r).stop(true, true).animate(i, "fast");
+					$(s).css(r).stop(true, true).animate(i, "fast");
 				},
 				_modalBtn: function(n) {
 					var s = false,
