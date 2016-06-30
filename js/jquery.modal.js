@@ -1,15 +1,18 @@
 /*!
- * jQuery Modal
+ * jQuery Modal Module
+ * Maintained and supported by Nostalg.io and halfnibble (Josh Wedekind)
+ * Version: 1.2.4
+ *
+ * Code based on jQuery Modal by CreativeDream
+ * ===========================================
  * Copyright (c) 2015 CreativeDream
  * Website http://creativedream.net/plugins
  * Version: 1.2.3 (10-04-2015)
  * Requires: jQuery v1.7.1 or later
  */
-var modal = (function(e) {
-	return $.cModal(e);
-}(function(e) {
+(function(e) {
 	"use strict";
-	e.cModal = function(supplied_parameters) {
+	$.fn.modal = function(supplied_parameters) {
 		var defaults = {
 				type: "default",
 				title: null,
@@ -47,7 +50,7 @@ var modal = (function(e) {
 					closebtn: ".modal-close-btn"
 				}
 			},
-			t = e.extend({}, defaults, supplied_parameters),
+			t = $.extend({}, defaults, supplied_parameters),
 			r, i = e("<div id='modal-window' />").hide(),
 			s = t._classes.box,
 			o = i.append(t.template),
@@ -64,7 +67,7 @@ var modal = (function(e) {
 						u._modalHide();
 					}).click(function(e) {
 						if (t.closeClick) {
-							if (e.target.id == "modal-window") {
+							if ($.target.id == "modal-window") {
                                 r = false;
 								u._modalHide();
 							}
@@ -92,7 +95,7 @@ var modal = (function(e) {
 					});
 				},
 				_keyUpF: function(e) {
-					switch (e.keyCode) {
+					switch ($.keyCode) {
 						case 13:
 							if (o.find("input:not(.modal-prompt-input),textarea").is(":focus")) {
 								return false;
@@ -146,7 +149,7 @@ var modal = (function(e) {
 						a = t.buttonText,
 						f = ["alert", "confirm", "prompt"],
 						l = ["xenon", "atlant", "reseted"];
-					if (e.inArray(t.type, f) == -1 && t.type != "default") {
+					if ($.inArray(t.type, f) == -1 && t.type != "default") {
 						e(s).addClass("modal-type-" + t.type);
 					}
 					if (t.size && t.size !== null) {
@@ -155,7 +158,7 @@ var modal = (function(e) {
 						e(s).addClass("modal-size-normal");
 					}
 					if (t.theme && t.theme !== null && t.theme != "default") {
-						e(s).addClass((e.inArray(t.theme, l) == -1 ? "" : "modal-theme-") + t.theme);
+						e(s).addClass(($.inArray(t.theme, l) == -1 ? "" : "modal-theme-") + t.theme);
 					}
 					if (t.background && t.background !== null) {
 						i.css("background-color", t.background);
@@ -182,8 +185,8 @@ var modal = (function(e) {
 								c = '<a class="modal-btn' + (t.buttons[0].addClass ? " " + t.buttons[0].addClass : "") + '">' + a.cancel + '</a><a class="modal-btn ' + (t.buttons[1] && t.buttons[1].addClass ? " " + t.buttons[1].addClass : "btn-light-blue") + '">' + a.ok + "</a>";
 								break;
 							default:
-								if (t.buttons.length > 0 && e.isArray(t.buttons)) {
-									e.each(t.buttons, function(e, t) {
+								if (t.buttons.length > 0 && $.isArray(t.buttons)) {
+									$.each(t.buttons, function(e, t) {
 										var n = t.addClass && typeof t.addClass != "undefined" ? " " + t.addClass : "";
 										c += '<a class="modal-btn' + n + '">' + t.text + "</a>";
 										if (t.eKey) {
@@ -254,7 +257,7 @@ var modal = (function(e) {
 						o = t.type,
 						a = n.index(),
 						f = t.buttons[a];
-					if (e.inArray(o, ["alert", "confirm", "prompt"]) > -1) {
+					if ($.inArray(o, ["alert", "confirm", "prompt"]) > -1) {
 						r = s = a == 1 ? true : false;
 						if (o == "prompt") {
 							r = s = s && i.find("input.modal-prompt-input").size() > 0 !== 0 ? i.find("input.modal-prompt-input").val() : false;
@@ -265,7 +268,7 @@ var modal = (function(e) {
 							return false;
 						}
 						r = s = f && f.val ? f.val : true;
-						if (!f.onClick || f.onClick(e.extend({
+						if (!f.onClick || f.onClick($.extend({
 								val: s,
 								bObj: n,
 								bOpts: f,
@@ -311,4 +314,4 @@ var modal = (function(e) {
 		u.init();
 		return u.actions;
 	};
-})(jQuery));
+}(jQuery));

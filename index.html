@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>jQuery Modal 1.2.3 | CreativeDream</title>
+	<title>jQuery Modal 1.2.4 | CreativeDream</title>
 	<!--Stylesheets-->
 	<link href="css/jquery.modal.css" type="text/css" rel="stylesheet" />
 	<link href="css/jquery.modal.theme-xenon.css" type="text/css" rel="stylesheet" />
@@ -15,7 +15,7 @@
 	$(document).ready(function(e) {
 		//alert
 		$('a#alert').click(function() {
-			modal({
+			$.modal({
 				type: 'alert',
 				title: 'Alert',
 				text: "Simple Message!"
@@ -23,7 +23,7 @@
 		});
 		//confirm
 		$('a#confirm').click(function() {
-			modal({
+			$.modal({
 				type: 'confirm',
 				title: 'Confirm',
 				text: 'Are you sure you want to delete your brain?',
@@ -34,7 +34,7 @@
 		});
 		//prompt
 		$('a#prompt').click(function() {
-			modal({
+			$.modal({
 				type: 'prompt',
 				title: 'Prompt',
 				text: 'Type your name:',
@@ -45,7 +45,7 @@
 		});
 		//success
 		$('a#success').click(function() {
-			modal({
+			$.modal({
 				type: 'success',
 				title: 'Success',
 				text: 'A simple success message!',
@@ -53,7 +53,7 @@
 		});
 		//warning
 		$('a#warning').click(function() {
-			modal({
+			$.modal({
 				type: 'warning',
 				title: 'Warning',
 				text: 'A simple warning message!',
@@ -62,7 +62,7 @@
 		});
 		//info
 		$('a#info').click(function() {
-			modal({
+			$.modal({
 				type: 'info',
 				title: 'Info',
 				text: 'A simple info message!',
@@ -71,7 +71,7 @@
 		});
 		//error
 		$('a#error').click(function() {
-			modal({
+			$.modal({
 				type: 'error',
 				title: 'Error',
 				text: 'A simple error message!',
@@ -79,7 +79,7 @@
 		});
 		//inverted
 		$('a#inverted').click(function() {
-			modal({
+			$.modal({
 				type: 'inverted',
 				title: 'Inverted',
 				text: 'A simple inverted message!',
@@ -87,7 +87,7 @@
 		});
 		//primary
 		$('a#primary').click(function() {
-			modal({
+			$.modal({
 				type: 'primary',
 				title: 'Primary',
 				text: 'A simple primary message!',
@@ -95,7 +95,7 @@
 		});
 		//custom
 		$('a#custom').click(function() {
-			modal({
+			$.modal({
 				type: 'primary', //Type of Modal Box (alert | confirm | prompt | success | warning | error | info | inverted | primary)
 				title: 'Message', //Modal Title
 				text: 'Simple primary message with custom options and <b>Xenon</b> theme.', //Modal HTML Content
@@ -140,7 +140,7 @@
 		});
 		//custom2
 		$('a#custom2').click(function() {
-			modal({
+			$.modal({
 				type: 'inverted', //Type of Modal Box (alert | confirm | prompt | success | warning | error | info | inverted | primary)
 				title: 'Message', //Modal Title
 				text: 'Simple primary message with custom options and <b>Atlant</b> theme.<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.', //Modal HTML Content
@@ -183,7 +183,7 @@
 		});
 		//custom3
 		$('a#custom3').click(function() {
-			modal({
+			$.modal({
 				type: 'default', //Type of Modal Box (alert | confirm | prompt | success | warning | error | info | inverted | primary)
 				title: 'Message', //Modal Title
 				text: 'Simple message with custom options and <b>Reseted</b> theme.', //Modal HTML Content
@@ -199,7 +199,7 @@
 </head>
 
 <body>
-	<h1>jQuery Modal 1.2.3</h1>
+	<h1>jQuery Modal 1.2.4</h1>
 	<p>************</p>
 	<hr />
 	<h3>Demo:</h3>

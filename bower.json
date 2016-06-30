@@ -1,15 +1,16 @@
 {
   "name": "jquery.modal",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": "js/jquery.modal.min.js",
   "ignore": [
     "**/.*",
     "bower_components",
     "test"
   ],
-  "homepage": "https://github.com/CreativeDream/jquery.modal",
+  "homepage": "https://github.com/Nostalgio/jquery.modal",
   "authors": [
-    "CreativeDream <yuliangagarin@mail.ru>"
+    "CreativeDream <yuliangagarin@mail.ru>",
+    "Josh Wedekind <josh@halfnibble.com"
   ],
   "description": "A simple jquery Modal boxes",
   "license": "MIT",

@@ -1,4 +1,10 @@
-/*! * CSS Modal
+/*
+ * jQuery Modal Module CSS
+ * Maintained and supported by Nostalg.io and halfnibble (Josh Wedekind)
+ * Version: 1.2.4
+ *
+ * Code based on jQuery Modal by CreativeDream
+ * CSS Modal
  * Copyright (c) 2015 CreativeDream
  * Website http://creativedream.net/plugins
  * Version: 1.2.3 (10-04-2015)
@@ -51,35 +57,35 @@
 
 /* Modal Responsive */
 @media only screen and (max-width : 580px){
-	#modal-window .modal-box.modal-size-normal{
-		width: 96%;
-		left: 0 !important;
-		margin-left: 2% !important;
-		margin-right: 2%;
-	}
+    #modal-window .modal-box.modal-size-normal{
+        width: 96%;
+        left: 0 !important;
+        margin-left: 2% !important;
+        margin-right: 2%;
+    }
 }
 @media only screen and (max-width : 1020px){
-	#modal-window .modal-box.modal-size-large{
-		width: 96%;
-		left: 0 !important;
-		margin-left: 2% !important;
-		margin-right: 2%;
-	}
+    #modal-window .modal-box.modal-size-large{
+        width: 96%;
+        left: 0 !important;
+        margin-left: 2% !important;
+        margin-right: 2%;
+    }
 }
 @media only screen and (max-width : 370px){
-	#modal-window .modal-box.modal-size-small{
-		width: 96%;
-		left: 0 !important;
-		margin-left: 2% !important;
-		margin-right: 2%;
-	}
+    #modal-window .modal-box.modal-size-small{
+        width: 96%;
+        left: 0 !important;
+        margin-left: 2% !important;
+        margin-right: 2%;
+    }
 }
 
 /* 
 
     Modal Title
 
-*/	
+*/  
 #modal-window .modal-box .modal-title {
     position: relative;
     padding: 12px 15px;
@@ -121,7 +127,7 @@
 
     Modal Text
 
-*/	
+*/  
 #modal-window .modal-box .modal-text {
     font-size: 14px;
     padding: 18px 15px;
@@ -178,7 +184,7 @@
 
     Modal Buttons 
 
-*/	
+*/  
 #modal-window .modal-box .modal-buttons {
     padding: 10px 15px;
     text-align: right;
@@ -438,7 +444,7 @@
 
     Modal Title Types
 
-*/	
+*/  
 #modal-window .modal-box.modal-type-success .modal-title {
     background-color: #61b832;
 }

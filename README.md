@@ -1,4 +1,4 @@
-jQuery.modal 1.2.3
+jQuery.modal 1.2.4
 ============
 
 A simple jQuery Modal plugin.
@@ -24,7 +24,7 @@ Include the jQuery library and jquery.modal script file in your html page.
 The function is called 'modal'. So just call it ;)
 
 ~~~ javascript
-modal({
+$.modal({
 	type: 'inverted', //Type of Modal Box (alert | confirm | prompt | success | warning | error | info | inverted | primary)
 	title: 'Message', //Modal Title
 	text: 'Text', //Modal HTML Content
