@@ -1,4 +1,4 @@
-jQuery.modal 1.2.4
+jQuery.modal 1.2.5
 ============
 
 A simple jQuery Modal plugin.

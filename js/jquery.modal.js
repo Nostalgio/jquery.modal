@@ -1,7 +1,7 @@
 /*!
  * jQuery Modal Module
  * Maintained and supported by Nostalg.io and halfnibble (Josh Wedekind)
- * Version: 1.2.4
+ * Version: 1.2.5
  *
  * Code based on jQuery Modal by CreativeDream
  * ===========================================
@@ -12,7 +12,7 @@
  */
 (function($) {
 	"use strict";
-	$.fn.modal = function(supplied_parameters) {
+	$.modal = function(supplied_parameters) {
 		var defaults = {
 				type: "default",
 				title: null,
